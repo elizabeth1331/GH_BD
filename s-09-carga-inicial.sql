@@ -55,6 +55,11 @@ insert into VIVIENDA(vivienda_id,direccion,longitud,latitud,capacidad_max,descri
 insert into VIVIENDA(vivienda_id,direccion,longitud,latitud,capacidad_max,descripcion,fecha_estatus,es_v_venta,es_v_renta,es_v_vacacionar,usuario_id,estatus_vivienda_id) values (vivienda_seq.nextval,'Calle Salvador Díaz Mirón 84, Sta María la Ribera, Cuauhtémoc, 06400 Ciudad de México, CDMX',20.372954064531918, -69.18435041904353,8,'Departamento ',to_date('09/15/2007','mm/dd/yyyy'),0,1,0,8,3);
 insert into VIVIENDA(vivienda_id,direccion,longitud,latitud,capacidad_max,descripcion,fecha_estatus,es_v_venta,es_v_renta,es_v_vacacionar,usuario_id,estatus_vivienda_id) values (vivienda_seq.nextval,'Centro Armand, Av. de los Insurgentes Sur 1391, Insurgentes Mixcoac, Benito Juárez, 03920 Ciudad de México, CDMX',19.373450010522657, -99.18015007973771,2,'Departamento grande',to_date('03/01/2012','mm/dd/yyyy'),0,0,1,1,2);
 insert into VIVIENDA(vivienda_id,direccion,longitud,latitud,capacidad_max,descripcion,fecha_estatus,es_v_venta,es_v_renta,es_v_vacacionar,usuario_id,estatus_vivienda_id) values (vivienda_seq.nextval,'Denver 29-a, Noche Buena, Benito Juárez, 03720 Ciudad de México, CDMX',19.372954064531918, -99.18435041904353,3,'depertamento chico',to_date('04/23/2017','mm/dd/yyyy'),0,0,1,31,3);
+insert into VIVIENDA(vivienda_id,direccion,longitud,latitud,capacidad_max,descripcion,fecha_estatus,es_v_venta,es_v_renta,es_v_vacacionar,usuario_id,estatus_vivienda_id) values (vivienda_seq.nextval,'Av. Río de los Remedios 40, San Juan Ixhuatepec, 54180 Tlalnepantla de Baz, Méx.',19.525871044660143, -99.1070705653462,4,'Casa mediana',to_date('09/24/2018','mm/dd/yyyy'),1,0,0,14,1);
+insert into VIVIENDA(vivienda_id,direccion,longitud,latitud,capacidad_max,descripcion,fecha_estatus,es_v_venta,es_v_renta,es_v_vacacionar,usuario_id,estatus_vivienda_id) values (vivienda_seq.nextval,'Calz. de la Viga 136, Lorenzo Boturini, Venustiano Carranza, 15820 Ciudad de México, CDMX',19.429699218576566, -99.13513720037491,4,'Casa mediana',to_date('01/13/2019','mm/dd/yyyy'),1,0,0,06,1);
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 insert into  MENSAJE(mensaje_id,titulo,texto,visto,usuario_id,respuesta_id,vivienda_id) values (mensaje_seq.nextval,'Respuesta Consulta de compra','Hola te parece el día '   || to_char(to_date('2021-01-01', 'yyyy-mm-dd') + dbms_random.value(1,365*6),'dd/mm/yyyy') || '?',0,13,null,1);
@@ -196,6 +201,8 @@ insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,viviend
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('10/15/2007','mm/dd/yyyy'),4,1);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('04/01/2012','mm/dd/yyyy'),5,1);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('05/23/2017','mm/dd/yyyy'),6,1);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('10/24/2018','mm/dd/yyyy'),7,1);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('02/13/2019','mm/dd/yyyy'),8,1);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('01/17/1993','mm/dd/yyyy'),1,2);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('11/27/2001','mm/dd/yyyy'),1,3);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('01/08/2002','mm/dd/yyyy'),1,1);
@@ -208,6 +215,12 @@ insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,viviend
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('3/24/2007','mm/dd/yyyy'),1,6);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('4/24/2008','mm/dd/yyyy'),1,3);
 insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('02/24/2010','mm/dd/yyyy'),3,4);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('10/24/2019','mm/dd/yyyy'),7,3);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('02/13/2020','mm/dd/yyyy'),8,3);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('01/24/2020','mm/dd/yyyy'),7,6);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('03/13/2020','mm/dd/yyyy'),8,6);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('02/13/2019','mm/dd/yyyy'),8,4);
+insert into HIST_ESTATUS_VIVIENDA(hist_estatus_vivienda_id,fecha_estatus,vivienda_id,estatus_vivienda_id) values(hist_estatus_v_seq.nextval,to_date('08/20/2020','mm/dd/yyyy'),7,4);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -286,6 +299,8 @@ insert into CALIFICACION_ALQUILER (CALIFICACION_ALQUILER_ID, CALIFICACION, DESCR
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 insert into VIVIENDA_VENTA(vivienda_id,num_catastral,clabe,folio,precio_inicial,avaluo,comision,usuario_id) values (3,7862351532,384903489823598345,'vvghd1589361893468',850000,empty_blob(),35,27);
+insert into VIVIENDA_VENTA(vivienda_id,num_catastral,clabe,folio,precio_inicial,avaluo,comision,usuario_id) values (7,7862351289,384903489842789312,'vvghd1589361893478',950000,empty_blob(),35,30);
+insert into VIVIENDA_VENTA(vivienda_id,num_catastral,clabe,folio,precio_inicial,avaluo,comision,usuario_id) values (8,7862351654,384903489829872313,'vvghd1589361893769',750000,empty_blob(),35,21);
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -319,6 +334,27 @@ insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (3
 insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (3,29,to_date('06/24/2010','mm/dd/yyyy'),empty_blob(),9500);
 insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (3,30,to_date('07/24/2010','mm/dd/yyyy'),empty_blob(),9500);
 insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (3,31,to_date('08/24/2010','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,1,to_date('09/20/2020','mm/dd/yyyy'),empty_blob(),15000);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,2,to_date('10/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,3,to_date('11/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,4,to_date('12/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,5,to_date('01/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,6,to_date('02/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,7,to_date('03/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (7,8,to_date('04/20/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,1,to_date('03/13/2019','mm/dd/yyyy'),empty_blob(),15000);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,2,to_date('04/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,3,to_date('05/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,4,to_date('06/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,5,to_date('07/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,6,to_date('08/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,7,to_date('09/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,8,to_date('10/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,9,to_date('11/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,10,to_date('12/13/2019','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,11,to_date('01/13/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,12,to_date('02/13/2020','mm/dd/yyyy'),empty_blob(),9500);
+insert into PAGO_VIVIENDA(vivienda_id,num_pago,fecha,pdf_pago,importe) values (8,13,to_date('03/13/2020','mm/dd/yyyy'),empty_blob(),9500);
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
