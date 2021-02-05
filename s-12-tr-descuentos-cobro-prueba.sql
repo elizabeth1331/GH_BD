@@ -68,7 +68,7 @@ if v_count=0 then
 
 else 
    if v_tipo_descuento <>'v1' then 
-    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion'
+    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion '
     ||v_registro_promocion_id
     ||' Vivienda_id '
     ||v_vivienda_id
@@ -78,13 +78,13 @@ else
     ||v_precio_inicial
     || ' Monto pagado '
     ||v_monto_pagado
-    ||'Número de pago'
+    ||' Número de pago '
     ||v_numero_pago;
 
     dbms_output.put_line(v_var);
   end if;
   if v_tipo_descuento <>'v2' then
-    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion'
+    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion '
     ||v_registro_promocion_id
     ||' Vivienda_id '
     ||v_vivienda_id
@@ -94,7 +94,7 @@ else
     ||v_precio_inicial
     || ' Monto pagado '
     ||v_monto_pagado
-    ||'Número de pago'
+    ||' Número de pago '
     ||v_numero_pago;
 
     dbms_output.put_line(v_var);
@@ -164,7 +164,7 @@ if v_count=0 then
 
 else 
    if v_tipo_descuento <>'v1' then 
-    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion'
+    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion '
     ||v_registro_promocion_id
     ||' Vivienda_id '
     ||v_vivienda_id
@@ -174,13 +174,13 @@ else
     ||v_precio_inicial
     || ' Monto pagado '
     ||v_monto_pagado
-    ||'Número de pago'
+    ||' Número de pago '
     ||v_numero_pago;
 
     dbms_output.put_line(v_var);
   end if;
   if v_tipo_descuento <>'v2' then
-    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion'
+    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion '
     ||v_registro_promocion_id
     ||' Vivienda_id '
     ||v_vivienda_id
@@ -190,7 +190,7 @@ else
     ||v_precio_inicial
     || ' Monto pagado '
     ||v_monto_pagado
-    ||'Número de pago'
+    ||' Número de pago '
     ||v_numero_pago;
 
     dbms_output.put_line(v_var);
@@ -265,7 +265,7 @@ if v_count=0 then
 end if;
 if v_count>0 then 
    if v_tipo_descuento <>'v1' then 
-    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion'
+    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion  '
     ||v_registro_promocion_id
     ||' Vivienda_id '
     ||v_vivienda_id
@@ -275,13 +275,13 @@ if v_count>0 then
     ||v_precio_inicial
     || ' Monto pagado '
     ||v_monto_pagado
-    ||'Número de pago'
+    ||' Número de pago '
     ||v_numero_pago;
 
     dbms_output.put_line(v_var);
   end if;
   if v_tipo_descuento <>'v2' then
-    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion'
+    v_var:='El usuario obtuvo un descuento en su pago del 10%  Los datos del registro son   Numero de registro de la promocion '
     ||v_registro_promocion_id
     ||' Vivienda_id '
     ||v_vivienda_id
@@ -291,7 +291,7 @@ if v_count>0 then
     ||v_precio_inicial
     || ' Monto pagado '
     ||v_monto_pagado
-    ||'Número de pago'
+    ||' Número de pago '
     ||v_numero_pago;
 
     dbms_output.put_line(v_var);
