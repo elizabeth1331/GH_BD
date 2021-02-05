@@ -329,25 +329,3 @@ CREATE TABLE VIVIENDA_RENTA_USUARIO(
     constraint vru_vivienda_renta_usuario_pk primary key (vivienda_renta_usuario_id),
     constraint vivienda_renta_folio_chk check(length(folio) = 18)
 );
-
-
-
-
--------------------------------------------------------------------------------------------------------------
--------------------------------------------CREANDO TABLA REGISTRO_PROMOCION-----------------------------------------
--------------------------------------------------------------------------------------------------------------
-
-CREATE TABLE REGISTRO_PROMOCION(
-    registro_promocion_id  number(10,0)     not null, 
-    vivienda_id     number(10,0)     not null,
-    usuario_id      number(10,0)     not null,
-    precio_inicial  number(10,2)     not null, 
-    monto_pagado    number(10,2)     not null, 
-    numero_pago     number(3,0)     not null,
-    tipo_descuento  varchar2(3)      not null,
-    constraint registro_promocion_pk primary key (registro_promocion_id),
-    constraint rp_vivienda_id_fk foreign key(vivienda_id)
-    references vivienda(vivienda_id),
-    constraint rp_usurario_id_fk foreign key(usuario_id)
-    references usuario(usuario_id)
-);
