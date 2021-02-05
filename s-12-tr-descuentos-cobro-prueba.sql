@@ -8,6 +8,7 @@
 --TAMBIÉN SE SOLICITA CREAR UNA NUEVA TABLA DONDE SE LLEVARA EL REGISTRO DE LOS DESCUENTOS, 
 --DICHA TABLA DEBERA LLAMARSE 'REGISTRO_PROMOCION' Y USANDO UNA SECUENCIA LLAMADA registro_promocion_seq
 
+
 Prompt Probando trigger tr_descuentos_cobro.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------Escenario 1:----------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ on pv.vivienda_id=vv.vivienda_id
 join usuario u
 on u.usuario_id=vv.usuario_id
 where vv.vivienda_id=3;
+
 v_var varchar2(300);
 v_registro_promocion_id  registro_promocion.registro_promocion_id%type;
 v_vivienda_id registro_promocion.vivienda_id%type;
@@ -36,6 +38,7 @@ v_tipo_descuento  registro_promocion.tipo_descuento%type;
 v_count number;
 v_nombre_usuario usuario.nombre_usuario%type;
 v_folio vivienda_venta.folio%type;
+
 v_ult_num_pag pago_vivienda.num_pago%type;
 v_importe pago_vivienda.importe%type;
 begin
@@ -96,7 +99,6 @@ else
     ||v_monto_pagado
     ||' Número de pago '
     ||v_numero_pago;
-
     dbms_output.put_line(v_var);
 
   end if;
@@ -150,6 +152,7 @@ group by registro_promocion_id,vivienda_id,usuario_id,precio_inicial,monto_pagad
 if v_count=0 then 
   
      open cur_registro_cliente;
+
   dbms_output.put_line('---------------Usuario sin descuento en su pago---------------');
   dbms_output.put_line('Registro de pagos del cliente');
   loop
@@ -161,6 +164,7 @@ if v_count=0 then
   
   end loop;
   close cur_registro_cliente;
+
 
 else 
    if v_tipo_descuento <>'v1' then 
@@ -298,9 +302,11 @@ if v_count>0 then
 
   end if;
 
+
 end if;
 
 end;
 /
 show errors;
+
 
