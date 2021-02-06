@@ -3,7 +3,7 @@
 --@Descripción: PRUEBA DE FUNCIONES
 
 connect sys/system as sysdba
-create or replace directory csv as '/home/jeremy/Desktop/p_f_v4';
+create or replace directory csv as '/home/jeremy/Desktop/proy_V7';
 grant read, write on directory csv to GM_PROY_ADMIN;
 !rm respaldo_usuario.csv
 connect gm_proy_admin/mg
@@ -24,16 +24,25 @@ begin
       'CSV',
       'respaldo_usuario.csv',
       r.usuario_id,
-	  r.nombre_usuario,
-	  r.email,
-	  r.password,
-	  r.tarjeta_id,
-	  r.num_seguridad,
-	  r.num_tarjeta,
-	  r.anio_exp,
-	  r.mes_exp
+	    r.nombre_usuario,
+	    r.email,
+	    r.password,
+	    r.tarjeta_id,
+	    r.num_seguridad,
+	    r.num_tarjeta,
+	    r.anio_exp,
+	    r.mes_exp
 	) into v_number from dual;
   end loop;
+  if v_number = 0 then
+    dbms_output.put_line('La función termino correctamente');
+  end if;
   dbms_output.put_line('Fin prueba');
+  exception
+    when others then
+    dbms_output.put_line('Algo salio mal en la función');
+    dbms_output.put_line('Código: ' || sqlcode);
+    dbms_output.put_line('Mensaje: ' || sqlerrm);
+
 end;
 /
