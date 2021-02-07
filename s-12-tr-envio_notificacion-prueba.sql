@@ -2,10 +2,13 @@
 --@Fecha: 05/02/2021
 --@Descripción: Prueba Trigger para enviar notificación (mensaje) a todos los usuarios cuando se registra una vivienda.
 
+
+
 connect gm_proy_admin/mg
+Prompt Creando trigger envio_notificación
+@@s-11-tr-envio_notificacion.sql
 
 set serveroutput on
-
 declare
   v_vivienda_id_1 vivienda.vivienda_id%type;
   v_vivienda_id_2 vivienda.vivienda_id%type;

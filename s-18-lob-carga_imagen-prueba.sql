@@ -3,6 +3,11 @@
 --@Descripción: CARGA DE IMAGENES PRUEBA
 
 
+
+connect gm_proy_admin/mg
+Prompt Creando lob-carga_imagen
+@@s-17-lob-carga_imagen.sql
+
 set serveroutput on
 declare
 v_var number;

@@ -3,8 +3,14 @@
 --@Descripción: Procedimiento para penalizar la calificación de una vivienda para alquiler que no responde mensajes.
 connect gm_proy_admin/mg
 
-set serveroutput on
+Prompt Creando trigger vivienda_alquiler_inactiva
+@@s-11-tr-vivienda-alquiler-inactiva.sql
+Prompt Creando trigger historico_est_vivienda
+@@s-11-tr-historico_est_vivienda.sql
+Prompt Creando Procedimiento penalizacion_calificacion
+@@s-13-p-penalizacion_calificacion.sql
 
+set serveroutput on
 select q.mensaje_id,q.visto,q.respuesta_id,q.vivienda_id,v.usuario_id,
   a.alquiler_id, ca.calificacion_alquiler_id,ca.calificacion,v.estatus_vivienda_id
   from(

@@ -2,6 +2,10 @@
 --@Fecha creación: 03/02/2021
 --@Descripción: PRUEBA DE FUNCIONES
 
+connect gm_proy_admin/mg
+Prompt Creando Funció genera_csv
+@@s-15-fx-genera_csv.sql
+
 connect sys/system as sysdba
 create or replace directory csv as '/home/jeremy/Desktop/Proy_VFinal';
 grant read, write on directory csv to GM_PROY_ADMIN;

@@ -2,6 +2,13 @@
 --@Fecha creación: 07/02/2021
 --@Descripción: Prueba procedimiento registro_vivienda.
 
+connect gm_proy_admin/mg
+
+Prompt Creando trigger historico_est_vivienda
+@@s-11-tr-historico_est_vivienda.sql
+Prompt Creando procedimiento registro_vivienda
+@@s-13-p-registro-vivienda.sql
+
 set serveroutput on
 begin
   dbms_output.put_line('Realizando inserción de vivienda para comprar');
