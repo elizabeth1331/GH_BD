@@ -20,7 +20,7 @@ v_mes_exp TARJETA_CREDITO.mes_exp%type;
 v_anio_exp TARJETA_CREDITO.anio_exp%type;
 v_ap_paterno usuario.ap_paterno%type;
 v_ap_materno usuario.ap_materno%type;
-v_contrasena usuario.contasena%type;
+v_contrasena usuario.contrasena%type;
 v_tipo varchar(2);
 v_user_id number;
 v_vivienda_id number;
@@ -45,6 +45,8 @@ begin
 
       insert into aux_elim_tarjeta(tarjeta_id,num_seguridad,num_tarjeta, mes_exp,anio_exp)
       values (v_tarjeta_id,v_num_seguridad,v_num_tarjeta,v_mes_exp,v_anio_exp);
+
+    
 
    end loop;
   close cur_elim_tarjeta;

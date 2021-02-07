@@ -1,4 +1,3 @@
-
 --@Autores: GARCIA MENESES JEREMY, MENDOZA DE LA VEGA DULCE ELIZABETH
 --@Fecha: 03/02/2021
 --@Descripción: CREACION DE TRIGGER TIPO ROW LEVEL
@@ -23,14 +22,13 @@ v_vivienda_id REGISTRO_PROMOCION.vivienda_id%type;
 v_monto_pagado REGISTRO_PROMOCION.monto_pagado%type;
 v_precio_inicial vivienda_venta.precio_inicial%type;
 v_ult_num_pag pago_vivienda.num_pago%type;
-
 v_ult_num_pago pago_vivienda.num_pago%type;
 v_importe pago_vivienda.importe%type;
 v_usuario_id usuario.usuario_id%type;
 v_var varchar2(300);
 v_restante number;
 v_rp_id number;
-v_num_promo num
+v_num_promo number;
 begin
   case 
     when inserting then
@@ -50,7 +48,6 @@ begin
       ) q1 on q1.usuario_id=u.usuario_id
       where vv.vivienda_id=:new.vivienda_id;
       v_importe:= :new.importe;
-
 
       case 
         when v_ult_num_pag=8 then
@@ -72,13 +69,10 @@ begin
         else
           v_var :='Pago realizado con exito ';
           dbms_output.put_line(v_var);   
-
       end case;
   end case;
 end;
 /
 show errors;
-
 commit;
-
 

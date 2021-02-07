@@ -28,3 +28,5 @@ CREATE GLOBAL TEMPORARY TABLE opciones_vivienda(
 --on commit preserve rows:
 --  Al realizar commit los registros segiran existiendo 
 --  permitiendo el almacenado permanente de los datos en alguna otra tabla.
+
+

@@ -8,12 +8,39 @@
 --esto con la finalidad de crear un registro de dichos usuarios con tarjetas expiradas
 
 create or replace view v_usuario(
-nombre_usuario, email, anio_exp,mes_exp
-) as select nombre_usuario, email, anio_exp,mes_exp
-from usuario u, tarjeta_credito tc
+nombre_usuario,email
+) as select nombre_usuario,email
+from(
+  select nombre_usuario,email
+  from  usuario u
+  join vivienda v
+  on u.usuario_id=v.usuario_id
+  join vivienda_renta r
+  on r.vivienda_id=v.vivienda_id
+    union  
+  select nombre_usuario,email
+  from  usuario u
+  join vivienda v
+  on u.usuario_id=v.usuario_id
+  join vivienda_venta ve
+  on ve.vivienda_id=v.vivienda_id
+    union 
+  select nombre_usuario,email
+  from  usuario u
+  join vivienda v
+  on u.usuario_id=v.usuario_id
+  join vivienda_vacacionar va
+  on va.vivienda_id=v.vivienda_id);
+/*
+
+create or replace view v_aux_elim_usuario(
+num_tarjeta,mes_exp,año_exp
+) as select tc.num_tarjeta,tc.mes_exp,tc.año_exp
+from tarjeta_credito tc
+join usuario u
 where u.usuario_id=tc.usuario_id;
 
-
+*/
 
 --Vista usada para que los clientes vean las calificaciones y comenatarios de los clientes
 --que alquilaron sus casas para vacacionar 

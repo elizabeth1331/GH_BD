@@ -95,7 +95,7 @@ create table respaldo_usuario_ext (
   usuario_id       number(10,0),
   nombre_usuario   varchar2(20),
   email            varchar2(200),
-  contasena         varchar2(40),
+  contrasena       varchar2(40),
   tarjeta_id       number(10,0),
   num_seguridad    number(4,0),
   num_tarjeta      number(16,0),
@@ -116,7 +116,7 @@ organization external(
       usuario_id,
       nombre_usuario,
       email,
-      contasena,
+      contrasena,
       tarjeta_id,
       num_seguridad,
       num_tarjeta,
@@ -129,16 +129,27 @@ organization external(
 reject limit unlimited;
 
 set linesize window
-col  folio format A20
+col  folio format  A20
+col  email format  A30
+col  avaluo format A20
+col num_catastral format A10
+col num_tarjeta format A20
+col clabe format A20
+col contrasena format A20
 
 prompt mostrando los datos de respaldo_usuario_ext
-select * from respaldo_usuario_ext;
+select usuario_id, nombre_usuario, email, contrasena,
+  tarjeta_id, num_seguridad, to_char(num_tarjeta) as num_tarjeta,
+  anio_exp, mes_exp 
+from respaldo_usuario_ext;
 
 prompt mostrando los datos de pago_vivienda_ext  
-
 select * from pago_vivienda_ext;
 
 
 prompt mostrando los datos de VIVIENDA_VENTA_EXT 
-select * from VIVIENDA_VENTA_EXT;
+select  vivienda_id, to_char(num_catastral) as num_catastral, 
+  to_char(clabe) as clabe, folio, precio_inicial, 
+  avaluo, comision, usuario_id 
+from VIVIENDA_VENTA_EXT;
 

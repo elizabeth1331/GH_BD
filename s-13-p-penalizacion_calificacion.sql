@@ -1,9 +1,11 @@
 --@Autores: GARCIA MENESES JEREMY, MENDOZA DE LA VEGA DULCE ELIZABETH
 --@Fecha: 03/02/2021
 --@Descripción: Procedimiento para penalizar la calificación de una vivienda para alquiler que no responde mensajes.
+--Se valida trigger vivienda-alquiler-inactiva y historico_est_vivienda
+
 connect gm_proy_admin/mg
 
-create or replace procedure penalizacion_calificacion(p_salida out number)
+create or replace procedure penalizacion_calificacion
 is
 cursor cur_mensaje is
   select q.mensaje_id,q.visto,q.respuesta_id,q.vivienda_id,v.usuario_id,
@@ -27,14 +29,12 @@ cursor cur_mensaje is
   join alquiler a
   on vv.vivienda_id = a.vivienda_id
   join calificacion_alquiler ca
-  on ca.alquiler_id = a.alquiler_id
-  where ca. calificacion > 0; 
+  on ca.alquiler_id = a.alquiler_id;
 
 begin
-  p_salida := -1;
   dbms_output.put_line('Registros antes de la penalización');
   for r in cur_mensaje loop
-    dbms_output.put_line('##############################################################');
+    dbms_output.put_line('-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --');
     dbms_output.put_line('Identificador del mensaje: ' || r.mensaje_id);
     dbms_output.put_line('Identificador vivienda asociada al mensaje: ' || r.vivienda_id);
     dbms_output.put_line('Estado del mensaje: visto');
@@ -44,15 +44,14 @@ begin
     dbms_output.put_line('Identificador de la calificación del alquiler: ' || r.calificacion_alquiler_id);
     dbms_output.put_line('calificación de la vivienda: ' || r.calificacion);
     dbms_output.put_line('Aplicando penalización...');
-    if r.calificacion-1 >= 0 then
     update calificacion_alquiler
-      set calificacion = r.calificacion-1 
-      where calificacion_alquiler_id = r.calificacion_alquiler_id;
-    end if;
+      set calificacion = calificacion-1 
+      where calificacion_alquiler_id = r.calificacion_alquiler_id
+      and calificacion-1 >= 0;
   end loop;
   dbms_output.put_line('Registros después de la penalización: ');
   for r in cur_mensaje loop
-    dbms_output.put_line('##############################################################');
+    dbms_output.put_line('-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --');
     dbms_output.put_line('Identificador del mensaje: ' || r.mensaje_id);
     dbms_output.put_line('Identificador vivienda asociada al mensaje: ' || r.vivienda_id);
     dbms_output.put_line('Estado del mensaje: visto');
@@ -62,7 +61,6 @@ begin
     dbms_output.put_line('Identificador de la calificación del alquiler: ' || r.calificacion_alquiler_id);
     dbms_output.put_line('calificación de la vivienda: ' || r.calificacion);
   end loop;
-  p_salida := 0;
 end;
 /
 show errors

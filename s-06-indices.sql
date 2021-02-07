@@ -24,9 +24,6 @@ CREATE INDEX ALQUILER_FOLIO_IX ON ALQUILER(folio);
 --Índice que verifica unicidad en el nombre del usuario.
 CREATE UNIQUE INDEX USUARIO_NOM_USUARIO_IUK ON USUARIO(nombre_usuario);
 
---Índice que verifica unicidad en el número de tarjeta de credito.
-CREATE UNIQUE INDEX TARJETA_NUM_TARJETA_IUK ON TARJETA_CREDITO(num_tarjeta);
-
 --Índice que verifica unicidad en las CLABE para las rentas
 CREATE UNIQUE INDEX CLABE_RENTA_CLABE_IUK ON CLABE_RENTA(clabe); 
 
