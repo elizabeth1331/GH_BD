@@ -98,3 +98,9 @@ select v.vivienda_id,v.usuario_id, vv.deposito, vv.costo_dia, vv.max_dias
 from vivienda v, vivienda_vacacionar vv  
 where v.usuario_id = 102
 and v.vivienda_id = vv.vivienda_id;
+
+select hev.hist_estatus_vivienda_id,
+hev.fecha_estatus, hev.vivienda_id, hev.estatus_vivienda_id
+from hist_estatus_vivienda hev, vivienda v
+where v.vivienda_id = hev.vivienda_id
+and (v.usuario_id = 100 or v.usuario_id = 101 or v.usuario_id = 102);

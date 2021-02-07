@@ -4,12 +4,12 @@
 connect gm_proy_admin/mg
 
 create or replace function genera_csv(
- 	p_directorio 		     varchar2,
- 	p_nombre_archivo  	 varchar2,
-	p_usuario_id 		     usuario.usuario_id%type,
-	p_nombre_usuario 	   usuario.nombre_usuario%type,
-	p_email 			       usuario.email%type,
-	p_password 			     usuario.password%type,
+  p_directorio 		     varchar2,
+  p_nombre_archivo     varchar2,
+  p_usuario_id 		     usuario.usuario_id%type,
+  p_nombre_usuario 	   usuario.nombre_usuario%type,
+  p_email 			       usuario.email%type,
+  p_contasena 		     usuario.contrasena%type,
   p_tarjeta_id         tarjeta_credito.tarjeta_id%type,
   p_num_seguridad      tarjeta_credito.num_seguridad%type,
   p_num_tarjeta        tarjeta_credito.anio_exp%type,
@@ -26,7 +26,7 @@ begin
     utl_file.put(v_file, p_usuario_id 		  || ',');
     utl_file.put(v_file, p_nombre_usuario 	|| ',');
     utl_file.put(v_file, p_email		 	      || ',');
-    utl_file.put(v_file, p_password         || ',');
+    utl_file.put(v_file, p_contasena        || ',');
     utl_file.put(v_file, p_tarjeta_id       || ',');
     utl_file.put(v_file, p_num_seguridad    || ',');
     utl_file.put(v_file, p_num_tarjeta      || ',');

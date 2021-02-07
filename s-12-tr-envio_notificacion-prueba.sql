@@ -43,13 +43,19 @@ begin
       dbms_output.put_line('Usuario_id =' 	|| r.usuario_id);
     end if;
   end loop;
+  commit;
+  exception
+  when others then
+    dbms_output.put_line('Error en el código');
+    dbms_output.put_line('Codigo: '  || sqlcode);
+    dbms_output.put_line('Mensaje: ' || sqlcode);
+    rollback;  
 
 end;
 /
 show errors
 
+col texto format A30;
 select mensaje_id, titulo, texto, usuario_id
 from mensaje
 where titulo like 'NUEVA%';
-
-rollback;

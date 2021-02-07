@@ -130,6 +130,8 @@ reject limit unlimited;
 
 set linesize window
 col  folio format A20
+col  email format A20
+col avaluo format A20
 
 prompt mostrando los datos de respaldo_usuario_ext
 select * from respaldo_usuario_ext;

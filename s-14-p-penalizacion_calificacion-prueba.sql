@@ -35,14 +35,13 @@ begin
   penalizacion_calificacion();
   if v_salida = 0 then
     dbms_output.put_line('El Procedimiento finalizo correctamente');
-    commit;
   end if; 
-  exception 
+  commit;
+  exception
     when others then
-    dbms_output.put_line('Error al ejecutar procedimiento');
-    dbms_output.put_line('Codigo: '  || sqlcode);
-    dbms_output.put_line('Mensaje: ' || sqlcode);
-    rollback;
+      dbms_output.put_line('Codigo: ' || sqlcode);
+      dbms_output.put_line('Mensaje: ' || sqlerrm);
+      rollback;
 end;
 /
 

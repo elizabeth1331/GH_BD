@@ -68,12 +68,14 @@ Prompt Creando vistas
 @@s-08-vistas.sql
 Prompt Carga inicial
 @@s-09-carga-inicial.sql
-
-
+commit;
+Prompt Consultas
+@@s-10-consultas.sql
 Prompt Creando trigger vivienda_alquiler_inactiva
 @@s-11-tr-vivienda-alquiler-inactiva.sql
 Prompt Creando trigger historico_est_vivienda
 @@s-11-tr-historico_est_vivienda.sql
+
 Prompt Creando Procedimiento penalizacion_calificacion
 @@s-13-p-penalizacion_calificacion.sql
 Prompt Prueba Procdimiento penalizacion_calificacion
@@ -83,6 +85,7 @@ Prompt Creando procedimiento registro_vivienda
 @@s-13-p-registro-vivienda.sql
 Prompt Probando procedimiento registro_vivienda
 @@s-14-p-registro-vivienda-prueba.sql
+
 Prompt Creando trigger envio_notificación
 @@s-11-tr-envio_notificacion.sql
 Prompt Probando trigger envio_notificación
@@ -93,4 +96,6 @@ Prompt Creando Funció genera_csv
 Prompt Prueba Función genera_csv
 @@s-16-fx-genera_csv-prueba.sql
 
-commit;
+Prompt Manejo de archivos Blob
+@@s-17-lob-carga_imagen.sql
+@@s-18-lob-carga_imagen-prueba.sql

@@ -51,6 +51,23 @@ from(
 where q.usuario_id = u.usuario_id 
 ;
 
+Prompt Consulta de usuarios asociados a viviendas con union
+select u.nombre_usuario,u.nombre,u.ap_paterno,u.ap_materno,u.email,u.contrasena
+from  usuario u
+natural join vivienda 
+natural join vivienda_renta 
+  union  
+select u.nombre_usuario,u.nombre,u.ap_paterno,u.ap_materno,u.email,u.contrasena
+from  usuario u
+natural join vivienda  
+join vivienda_venta 
+using(vivienda_id)
+  union 
+select u.nombre_usuario,u.nombre,u.ap_paterno,u.ap_materno,u.email,u.contrasena
+from  usuario u
+natural join vivienda 
+natural join vivienda_vacacionar;
+
 Prompt Consulta con sinonimo realizada por usuario invitado
 Prompt Conectando con usuario invitado
 connect mg_proy_invitado/mg;
