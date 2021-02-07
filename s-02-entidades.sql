@@ -20,7 +20,7 @@ CREATE TABLE USUARIO(
     ap_paterno         varchar2(30)     not null,
     ap_materno         varchar2(30),
     email              varchar2(200)    not null,
-    password           varchar2(40)     not null,
+    contraseña           varchar2(40)     not null,
     constraint empleado_pk primary key (usuario_id)
 );
 
@@ -32,7 +32,7 @@ CREATE TABLE USUARIO(
 CREATE TABLE TARJETA_CREDITO(
     tarjeta_id          number(10,0)    not null,
     num_seguridad       number(4,0)     not null,
-    num_tarjeta         number(16,0)    not null,
+    num_tarjeta         number(16,0)    not null constraint num_tarjeta_uk unique, 
     mes_exp             number(2,0)     not null,
     anio_exp            number(4,0)     not null,
     usuario_id          number(10,0)    not null,

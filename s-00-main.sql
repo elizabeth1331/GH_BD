@@ -68,17 +68,25 @@ Prompt Creando vistas
 @@s-08-vistas.sql
 Prompt Carga inicial
 @@s-09-carga-inicial.sql
---Prompt Creando Trigger de promociones
---@@s-11-tr-descuentos-cobro
+Prompt Creando Trigger de promociones
+@@s-11-tr-descuentos-cobro
+Prompt Validando Trigger de promociones
+@@s-12-tr-descuentos-cobro-prueba
+Prompt Cambios en tabla tarjeta de credito y depurando registros
+--@@s-11-tr-depura-tarjetas.sql
 
-Prompt Creando Procedimiento penalizacion_calificacion
+@@s-14-p-deputa-tarjeta-prueba.sql
+
+Prompt Validando cambios en tabla tarjeta de credito y depurando registros
+
+/*Prompt Creando Procedimiento penalizacion_calificacion
 @@s-13-p-penalizacion_calificacion.sql
 Prompt Prueba Procdimiento penalizacion_calificacion
 @@s-14-p-penalizacion_calificacion-prueba.sql
 Prompt Creando Funció genera_csv
 @@s-15-fx-genera_csv.sql
 Prompt Prueba Función genera_csv
-@@s-16-fx-genera_csv-prueba.sql
+@@s-16-fx-genera_csv-prueba.sql*/
 
 
 commit;
