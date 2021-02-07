@@ -20,7 +20,7 @@ CREATE TABLE USUARIO(
     ap_paterno         varchar2(30)     not null,
     ap_materno         varchar2(30),
     email              varchar2(200)    not null,
-    contraseña           varchar2(40)     not null,
+    contrasena           varchar2(40)     not null,
     constraint empleado_pk primary key (usuario_id)
 );
 
